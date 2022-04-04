@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+
+
+    
+    <div class="cards"  >
+   
+           <div class="card-single"  *ngFor="let product of productos">
+             
+                   <img class="images" [src]="product.ImagenUrl"/>
+                   <h4>{{'$'+ product.precio}}</h4>
+                   <span>{{product.descripcion}}</span>
+   
+                   <div class="botones"> 
+                       <button  (click)="AnadirCarrito(product)" class="btn btn-outline btncolor" style="color:#DD2F6E ;"  >Agregar</button>
+                   </div>
+              
+            
+           </div>
+   
+     
+   
+       </div>
+   
+   </main>
+   
+   
+   
+   
+   
+   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+       <!-- Position Column -->
+   
+     
+       <!-- Name Column -->
+       <ng-container matColumnDef="descripcion">
+         <mat-header-cell *matHeaderCellDef> descripcion </mat-header-cell>
+         <mat-cell *matCellDef="let ArrayAdd">{{ArrayAdd.descripcion}} </mat-cell>
+       </ng-container>
+     
+       <!-- Weight Column -->
+       <ng-container matColumnDef="codigo">
+         <mat-header-cell *matHeaderCellDef> codigo </mat-header-cell>
+         <mat-cell *matCellDef="let ArrayAdd"> {{ArrayAdd.codigo}} </mat-cell>
+       </ng-container>
+     
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="cantidad">
+         <mat-header-cell *matHeaderCellDef> cantidad </mat-header-cell>
+         <mat-cell *matCellDef="let ArrayAdd">{{ArrayAdd.cantidad}} </mat-cell>
+       </ng-container>
+   
+       <ng-container matColumnDef="precio">
+           <mat-header-cell *matHeaderCellDef> precio </mat-header-cell>
+           <mat-cell *matCellDef="let ArrayAdd">{{ArrayAdd.precio}} </mat-cell>
+         </ng-container>
+   
+       
+   
+        
+   
+      
+         <ng-container matColumnDef="acciones">
+           <mat-header-cell *matHeaderCellDef> acciones </mat-header-cell>
+           <mat-cell *matCellDef="let ArrayAdd">
+               <mat-icon  class="icondelete pointer">delete</mat-icon>
+               <button class="btn btn-sm btn-danger" (click)="DisminuirProducto(ArrayAdd)">Quitar</button>
+               <button class="btn btn-sm btn-success" (click)="AumentarProducto(ArrayAdd)" >Agregar</button>
+   
+           </mat-cell>
+         </ng-container>
+     
+       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+     </mat-table>
+   
+   
+</body>
+</html>
+

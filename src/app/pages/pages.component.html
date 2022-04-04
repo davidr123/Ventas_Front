@@ -1,0 +1,96 @@
+
+<!-- <mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+<app-sidenav></app-sidenav>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <app-header (toggleSidebarForme)="sideBarToggle()"></app-header>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+    
+</mat-drawer-container> -->
+
+
+
+
+ <!-- <main>
+    <app-header></app-header>
+ </main>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidebar mode="side" opened>
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        
+        <mat-icon class="pointer" (click)="sidebar.toggle()"  >menu</mat-icon>
+        <div class="main">
+     <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container> -->
+
+
+
+<mat-sidenav-container>
+
+    <mat-sidenav #sidebar mode="side" opened>
+
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        
+     
+           
+            
+                
+                        <mat-toolbar  >
+                            <h2>
+                                <button>  <mat-icon class="pointer" (click)="sidebar.toggle()"  >menu</mat-icon></button>
+                                Dashboard
+                            </h2>
+              
+                            <div class="row mr-2 ml-auto">
+                                <ul>
+                                    <li>
+                                        <button  mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center btn">
+                                            <img [src]="vendedor.ImagenUrl" 
+                                            alt="" 
+                                            class="user-image mr-1 p-2"
+                                            />
+                                            {{vendedor.usuario}}
+                                              <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+                                        </button>
+                                        <mat-menu #menu="matMenu">
+                                        <button (click)="Logout()" mat-menu-item>
+                                            <mat-icon>exit_to_app</mat-icon>
+                                            Logout
+                                        </button>
+                                       </mat-menu>
+                                    </li>
+                                </ul>
+                            </div>
+                        </mat-toolbar>
+               
+                   
+              
+
+         
+
+            <div class="main">
+            
+         <router-outlet></router-outlet>
+
+            </div>
+
+      
+    </mat-sidenav-content>
+
+    
+</mat-sidenav-container>
+

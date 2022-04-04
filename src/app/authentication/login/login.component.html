@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <form action=""  
+        class="form"
+        [formGroup]="FormloginVendedor"
+        (submit)="Login()">
+            <h2>LOGIN</h2>
+            <input type="text" name="usuario" class="box" 
+            placeholder="Ingrese su Usuario"
+            formControlName="usuario">
+            <input type="password" name="password" class="box" 
+            placeholder="Ingrese su Password"
+            formControlName="password">
+            <input type="submit" value="SIGN IN" id="submit">
+       
+        
+        </form>
+
+
+    
+        <div class="side">
+            <img src="assets/img/ventas.jpg" alt="" />
+    
+        </div>
+        
+        </div>
+    
+    
+    
+</body>
+</html>

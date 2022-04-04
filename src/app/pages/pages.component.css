@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
+
+
+
+:host{
+   
+    flex-direction: colum;
+    height: 100%;
+}
+
+h2{
+    display:flex;
+    align-items:center;
+    padding-right: 0rem;
+        margin-right: 1rem;
+        height:40px;
+        width:40px;
+        border-radius:50%;
+  
+   
+}
+
+
+.btn{
+    color: black;
+}
+
+mat-icon{
+    color: rgb(26, 25, 25);
+}
+
+mat-sidenav{
+    width: 290px;
+    height: 100%;
+    background:#DD2F6E
+}
+
+mat-sidenav-container{
+
+    height: 100vh;
+}
+
+.main{
+    margin-left: 30px;
+}
+
+
+.cont{
+ 
+    justify-content: space-between;
+}
+
+
+li{
+list-style: none;
+}
+
+button{
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.user{
+    font-size: 14px;
+}
+
+.user-image{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.user-image-icon{
+    height: 18px;
+    font-size: 16px;
+}
+
+::ng-deep .mat-menu-content{
+    width: 160px;
+}
+
+
+
+mat-toolbar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding:1rem 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    width:calc(100% - 0px);
+    transition:left 300ms;
+   
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+ 
+
+}
