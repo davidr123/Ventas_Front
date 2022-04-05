@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { delay } from 'rxjs';
 import { Productos } from 'src/app/models/Productos.models';
 import { ProductosService } from 'src/app/services/productos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -16,6 +17,8 @@ export class ProductosComponent implements OnInit {
   public productos:Productos[]=[];
   public ArrayAdd:Productos[]=[];
   public ArrayProductosActualizados:Productos[]=[];
+
+  public ArrayProductosBorrado: Productos[]=[];
 
   public productoSeleccioando:Productos | undefined;
   public productoAdd:Productos | undefined;
@@ -33,17 +36,16 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
     this.MostrarProductos();
 
-  
-
-
   }
 
+
+  
 
   MostrarProductos(){
     this.productosServices.mostrarproductos()
     .subscribe(resp=>{
       this.productos= resp.producto
-console.log(this.productos)
+
 
 
     
@@ -52,26 +54,27 @@ console.log(this.productos)
 
 
 
-  AnadirCarrito(producto:Productos){ 
+  AnadirCarrito(items:Productos){ 
 
     
- const  indice = this.ArrayAdd.findIndex(item=> item._id === producto._id);
- console.log(indice);
- if(indice ===- 1){
 
- this.ArrayAdd.push(producto);
- 
-}else{
-this.ArrayAdd[indice].cantidad ++;
-}
+      this.productoSeleccioando= items
 
-
-this.dataSource= new MatTableDataSource(this.ArrayAdd);
-
-
-console.log(this.ArrayAdd);
-
- 
+      const  indice = this.ArrayAdd.findIndex(item=> item._id === items._id);
+      console.log(indice);
+      if(indice ===- 1){
+     
+      this.ArrayAdd.push(items);
+      
+     }else{
+     this.ArrayAdd[indice].cantidad ++;
+     }
+     
+   
+    console.log(this.ArrayAdd);
+    
+    this.dataSource= new MatTableDataSource(this.ArrayAdd);
+    this.productosServices.ObtenerInformaciondeProductos.emit(this.ArrayAdd);
   }
 
 
@@ -113,6 +116,21 @@ console.log(this.ArrayAdd);
 
        this.dataSource= new MatTableDataSource(this.ArrayAdd);
     
+  }
+
+
+  BorrarElemento(producto:Productos){
+
+    const indice= this.ArrayAdd.findIndex(item=> item._id === producto._id)
+    if(indice !==-1){
+      console.log(indice)
+this.ArrayProductosBorrado= this.ArrayAdd.splice(indice, 1);
+Swal.fire('Borrado', 'Producto Borrado', 'success');
+this.dataSource= new MatTableDataSource(this.ArrayAdd);
+this.productosServices.ObtenerProductoBorrado.emit(this.ArrayAdd);
+    }
+ 
+
   }
   
   

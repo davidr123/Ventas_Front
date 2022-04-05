@@ -10,35 +10,8 @@
   <title>Document</title>
 </head>
 <body>
-  <main>
 
-
-    
-    <div class="cards"  >
-   
-           <div class="card-single"  *ngFor="let product of productos">
-             
-                   <img class="images" [src]="product.ImagenUrl"/>
-                   <h4>{{'$'+ product.precio}}</h4>
-                   <span>{{product.descripcion}}</span>
-   
-                   <div class="botones"> 
-                       <button  (click)="AnadirCarrito(product)" class="btn btn-outline btncolor" style="color:#DD2F6E ;"  >Agregar</button>
-                   </div>
-              
-            
-           </div>
-   
-     
-   
-       </div>
-   
-   </main>
-   
-   
-   
-   
-   
+ <div class="mt-5">
    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
        <!-- Position Column -->
    
@@ -66,26 +39,30 @@
            <mat-cell *matCellDef="let ArrayAdd">{{ArrayAdd.precio}} </mat-cell>
          </ng-container>
    
+
+         <ng-container matColumnDef="iva">
+            <mat-header-cell *matHeaderCellDef> Iva </mat-header-cell>
+            <mat-cell *matCellDef="let ArrayAdd">{{ArrayAdd.precio * 0.12}} </mat-cell>
+          </ng-container>
+
+
+          <ng-container matColumnDef="total">
+            <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+            <mat-cell *matCellDef="let ArrayAdd">{{(ArrayAdd.precio * 0.12)+ (ArrayAdd.precio * ArrayAdd.cantidad)}} </mat-cell>
+          </ng-container>
+    
+    
        
    
         
    
-      
-         <ng-container matColumnDef="acciones">
-           <mat-header-cell *matHeaderCellDef> acciones </mat-header-cell>
-           <mat-cell *matCellDef="let ArrayAdd">
-               <mat-icon (click)="BorrarElemento(ArrayAdd)"  class="icondelete pointer">delete</mat-icon>
-               <button class="btn btn-sm btn-danger" (click)="DisminuirProducto(ArrayAdd)">Quitar</button>
-               <button class="btn btn-sm btn-success" (click)="AumentarProducto(ArrayAdd)" >Agregar</button>
-   
-           </mat-cell>
-         </ng-container>
+     
      
        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
      </mat-table>
    
-   
+    </div>
 </body>
 </html>
 

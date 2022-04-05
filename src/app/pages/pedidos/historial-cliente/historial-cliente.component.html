@@ -1,1 +1,63 @@
-<p>historial-cliente works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="card-body mt-3">
+    
+
+        <h2 >Busqueda de cliente por CI </h2>
+    
+        <form [formGroup]="FormCliente" >
+        <div class="search-wrapper">
+            <span class="las la-search"></span>
+            <input formControlName="cedula" (keyup.enter)="MostrarClientebyCedula()"   type="search" placeholder="Ingrese CI"/>
+    
+        </div>
+    </form>
+        
+    </div>
+         
+          
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+          
+            <th scope="col">Nombre</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Email</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clienteCedulaArray">
+          
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.cedula}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.genero}}</td>
+            <td>{{cliente.direccion}}</td>
+            <td>
+                <mat-icon   class="pointer"       matTooltip="Editar"
+                matTooltipClass="example-tooltip-red"
+                [routerLink]="['/dashboard', 'cliente', cliente.uid]" >edit</mat-icon>
+                <mat-icon  matTooltip="Borrar"  class="pointer">delete</mat-icon>   
+            </td>
+          </tr>
+        
+     
+        </tbody>
+      </table>
+      
+
+    
+</body>
+</html>
+

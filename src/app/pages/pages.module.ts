@@ -22,6 +22,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ConfirmacionComponent } from './pedidos/confirmacion/confirmacion.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     DatosClienteComponent,
     HistorialClienteComponent,
     ProductosComponent,
+    ConfirmacionComponent,
 
  
 
@@ -55,7 +58,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSelectModule,
     MatFormFieldModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTooltipModule
 
     
    

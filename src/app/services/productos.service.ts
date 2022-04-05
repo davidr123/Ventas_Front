@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ProductosInteface } from '../interfaces/productos.interface';
@@ -10,6 +10,10 @@ const base_url= environment.base_url;
   providedIn: 'root'
 })
 export class ProductosService {
+
+
+  public ObtenerInformaciondeProductos: EventEmitter<Productos[]>= new EventEmitter<Productos[]>();
+  public ObtenerProductoBorrado: EventEmitter<Productos[]>= new EventEmitter<Productos[]>();
 
 
   get Token(){

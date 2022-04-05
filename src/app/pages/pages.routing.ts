@@ -19,6 +19,7 @@ const routes: Routes = [
           {path:'pedidos', component:PedidosComponent},
           {path:'historial-cliente', component:HistorialClienteComponent},
           {path:'datos', component:DatosClienteComponent},
+          // {path:'cliente/:id', component:DatosClienteComponent},
         
         ]
       }
