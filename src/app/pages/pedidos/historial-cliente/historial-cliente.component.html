@@ -16,7 +16,7 @@
         <form [formGroup]="FormCliente" >
         <div class="search-wrapper">
             <span class="las la-search"></span>
-            <input formControlName="cedula" (keyup.enter)="MostrarClientebyCedula()"   type="search" placeholder="Ingrese CI"/>
+            <input formControlName="cedula"  (keyup.enter)="MostrarClientebyCedula()"  pattern="[0-9]{10}" type="search" placeholder="Ingrese CI"/>
     
         </div>
     </form>
@@ -36,25 +36,39 @@
             <th scope="col">Acciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           <tr *ngFor="let cliente of clienteCedulaArray">
-          
+        
             <td>{{cliente.nombre}}</td>
             <td>{{cliente.cedula}}</td>
             <td>{{cliente.email}}</td>
             <td>{{cliente.genero}}</td>
             <td>{{cliente.direccion}}</td>
+            <!-- <td>{{vendedor.email}}</td> -->
+       
+        
             <td>
-                <mat-icon   class="pointer"       matTooltip="Editar"
+                <mat-icon   class="pointer"  (click)="openDialog(cliente._id)"     matTooltip="Editar"
                 matTooltipClass="example-tooltip-red"
-                [routerLink]="['/dashboard', 'cliente', cliente.uid]" >edit</mat-icon>
-                <mat-icon  matTooltip="Borrar"  class="pointer">delete</mat-icon>   
+              >edit</mat-icon>
+                <mat-icon  matTooltip="Borrar" (click)="BorrarCliente(cliente._id)"  class="pointer">delete</mat-icon>   
             </td>
           </tr>
         
      
         </tbody>
+
+
+
+    
       </table>
+
+
+
+
+
+
+
       
 
     

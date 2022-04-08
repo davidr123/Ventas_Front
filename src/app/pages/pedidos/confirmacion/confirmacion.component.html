@@ -12,7 +12,7 @@
 <body>
 
  <div class="mt-5">
-   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+   <mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
        <!-- Position Column -->
    
      
@@ -42,27 +42,119 @@
 
          <ng-container matColumnDef="iva">
             <mat-header-cell *matHeaderCellDef> Iva </mat-header-cell>
-            <mat-cell *matCellDef="let ArrayAdd">{{ArrayAdd.precio * 0.12}} </mat-cell>
+            <mat-cell *matCellDef="let ArrayAdd">{{(ArrayAdd.precio * ArrayAdd.cantidad)*ArrayAdd.iva}} </mat-cell>
           </ng-container>
 
 
           <ng-container matColumnDef="total">
             <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
-            <mat-cell *matCellDef="let ArrayAdd">{{(ArrayAdd.precio * 0.12)+ (ArrayAdd.precio * ArrayAdd.cantidad)}} </mat-cell>
+            <mat-cell *matCellDef="let ArrayAdd">{{(ArrayAdd.precio * ArrayAdd.cantidad)*ArrayAdd.iva + (ArrayAdd.precio * ArrayAdd.cantidad)}} </mat-cell>
           </ng-container>
     
-    
-       
-   
-        
-   
-     
-     
+
        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
      </mat-table>
    
     </div>
+
+
+
+
+    <mat-card class="example-card ">
+      <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="5px"  >
+        <mat-toolbar >
+        <span class="subtitulo" style="color: white;">FACTURA</span>
+        <mat-icon style="color: white;">star</mat-icon>
+      </mat-toolbar>
+       <div>
+         <span>Cliente: {{vendedor.usuario}} </span>
+       </div>
+    <br>
+    <br>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" 
+        fxFlex fxFlex.lt-md="0" *ngIf="ArrayAdd.length!==0"  >
+          <!-- Columna # 1 -->
+          <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 calc(33% - 20px)"  >
+    
+        
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <span>Sub total:${{ subtotalsinIva}}</span>
+              <span></span>
+            </div>
+    
+            <mat-divider class="divider-horizontal"></mat-divider>
+    
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <span>Iva:${{totalidadesIva}}</span>
+              <span></span>
+            
+            </div>
+    
+            <mat-divider class="divider-horizontal"></mat-divider>
+    
+        
+    
+        
+    
+            <mat-divider class="divider-horizontal"></mat-divider>
+    
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <span>Total:${{totalidades}}</span>
+              <span></span>
+            </div>
+          </div>
+          <!-- Columna # 2 -->
+          <div  fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 calc(33% - 20px)">
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                  <span>Cuota Inicial:</span>
+             
+              </div>
+              <mat-divider class="divider-horizontal"></mat-divider>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <span>Descuento:</span>
+               
+              </div>
+    
+              <mat-divider class="divider-horizontal"></mat-divider>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <span> Saldo a financiar:</span>
+            
+              </div>
+              <mat-divider class="divider-horizontal"></mat-divider>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <span> Interés:</span>
+             
+              </div>
+          
+          </div>
+          <!-- Columna # 3 -->
+
+          <div>
+            <button (click)="openDialog()"> Finalizar Compra
+            </button>
+          </div>
+    
+        </div>
+    
+    
+      </div>
+
+    
+    
+    </mat-card>
+
+
+ 
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 

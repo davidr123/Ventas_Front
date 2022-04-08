@@ -24,7 +24,12 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ConfirmacionComponent } from './pedidos/confirmacion/confirmacion.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import { EditClienteComponent } from './pedidos/historial-cliente/edit-cliente/edit-cliente.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { HistorialesComponent } from './pedidos/historiales/historiales.component';
+import {MatCardModule} from '@angular/material/card';
+import { FinalizarcompraComponent } from './pedidos/confirmacion/finalizarcompra/finalizarcompra.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HistorialClienteComponent,
     ProductosComponent,
     ConfirmacionComponent,
+    EditClienteComponent,
+    HistorialesComponent,
+    FinalizarcompraComponent,
 
  
 
@@ -59,7 +67,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatCardModule,
+    MatProgressSpinnerModule
 
     
    

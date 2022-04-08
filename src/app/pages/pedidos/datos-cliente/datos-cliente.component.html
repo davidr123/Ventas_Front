@@ -17,7 +17,7 @@
                 <div class="col-md-6">
                     <div class="form-group has-danger">
                         <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cedula</font></font></label>
-                        <input type="text" id="lastName" class="form-control form-control-danger" placeholder="Cedula" formControlName="cedula" >
+                        <input type="number" id="lastName" class="form-control form-control-danger" placeholder="Cedula" formControlName="cedula" >
                     </div>
                 </div>
                 <!--/span-->
@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email</font></font></label>
-                        <input type="text" class="form-control" placeholder="Email" formControlName="email"  >
+                        <input type="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" class="form-control" placeholder="Email" formControlName="email"  >
                     </div>
                 </div>
                 <!--/span-->

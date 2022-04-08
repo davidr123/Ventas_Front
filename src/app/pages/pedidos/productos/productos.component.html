@@ -14,7 +14,7 @@
 
 
     
-    <div class="cards"  >
+    <div class="cards mat-elevation-z8 "  >
    
            <div class="card-single"  *ngFor="let product of productos">
              
@@ -74,9 +74,10 @@
          <ng-container matColumnDef="acciones">
            <mat-header-cell *matHeaderCellDef> acciones </mat-header-cell>
            <mat-cell *matCellDef="let ArrayAdd">
-               <mat-icon (click)="BorrarElemento(ArrayAdd)"  class="icondelete pointer">delete</mat-icon>
-               <button class="btn btn-sm btn-danger" (click)="DisminuirProducto(ArrayAdd)">Quitar</button>
-               <button class="btn btn-sm btn-success" (click)="AumentarProducto(ArrayAdd)" >Agregar</button>
+
+             <mat-icon  (click)="AumentarProducto(ArrayAdd)" >add_circle_outline</mat-icon>
+               <mat-icon  (click)="DisminuirProducto(ArrayAdd)">remove_circle_outline</mat-icon>
+              <mat-icon (click)="BorrarElemento(ArrayAdd)"  class="icondelete pointer">delete</mat-icon>
    
            </mat-cell>
          </ng-container>

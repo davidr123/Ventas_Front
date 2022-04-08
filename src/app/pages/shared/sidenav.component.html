@@ -4,16 +4,16 @@
 
     </div>
     <div class="logo">
-        <h2><mat-icon class="iconshop">dashboard</mat-icon> <span> Administración</span></h2> 
+        <h2><mat-icon class="iconshop" [routerLink]="['dashboard']" >dashboard</mat-icon> <span> Administración</span></h2> 
      </div>
          <mat-divider></mat-divider>
     <h2 matSubheader class="mt-1"></h2>
     <a class="text-color" mat-list-item [routerLink]="['pedidos']"  routerLinkActive="active-link">
         <mat-icon>shopping_cart</mat-icon> Pedidos
     </a>
-    <a class="text-color" [routerLink]="['/dashboard/historial-cliente']" mat-list-item><mat-icon >supervisor_account</mat-icon>Historial CLiente</a>
-    <a class="text-color" mat-list-item><mat-icon>trending_up</mat-icon>Historial Vendedor</a>
-    <a class="text-color" mat-list-item><mat-icon>exit_to_app</mat-icon>Logout</a>
+    <a class="text-color" [routerLink]="['/dashboard/historial-cliente']" mat-list-item><mat-icon >supervisor_account</mat-icon> CLientes</a>
+    
+    <a class="text-color" (click)="Logout()" mat-list-item><mat-icon>exit_to_app</mat-icon>Logout</a>
   
 
 </mat-nav-list>

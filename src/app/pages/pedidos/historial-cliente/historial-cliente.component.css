@@ -1,10 +1,13 @@
 .search-wrapper input{
     height:100%;
-    padding:.8rem;
-    border: 2px;
+    padding:.3rem;
+    border-radius: 8px;
     outline: black;
+   
+    display: flex;
 
 }
+
 
 .search-wrapper {
     border: 1px solid #f0f0f0;
@@ -55,9 +58,7 @@
 		background: #b71c1c;
 	  }
 
-
-      @media 
-only screen and (max-width: 760px),
+@media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
@@ -96,14 +97,11 @@ only screen and (max-width: 760px),
 	/*
 	Label the data
 	*/
-	td:nth-of-type(1):before { content: "First Name"; }
-	td:nth-of-type(2):before { content: "Last Name"; }
-	td:nth-of-type(3):before { content: "Job Title"; }
-	td:nth-of-type(4):before { content: "Favorite Color"; }
-	td:nth-of-type(5):before { content: "Wars of Trek?"; }
-	td:nth-of-type(6):before { content: "Secret Alias"; }
-	td:nth-of-type(7):before { content: "Date of Birth"; }
-	td:nth-of-type(8):before { content: "Dream Vacation City"; }
-	td:nth-of-type(9):before { content: "GPA"; }
-	td:nth-of-type(10):before { content: "Arbitrary Data"; }
+	td:nth-of-type(1):before { content: "Nombre"; }
+	td:nth-of-type(2):before { content: "Cedula"; }
+	td:nth-of-type(3):before { content: "Email"; }
+	td:nth-of-type(4):before { content: "Genero"; }
+	td:nth-of-type(5):before { content: "Direccion"; }
+	td:nth-of-type(5):before { content: "Acciones"; }
+
 }

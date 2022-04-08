@@ -39,7 +39,7 @@ export class ProductosService {
     .pipe(
       map(resp=>{
         const producto= resp.productos.map(pro=>new Productos(pro._id, pro.descripcion, pro.codigo, pro.cantidad, 
-          pro.precio, pro.cliente, pro.img, pro.tipo)
+          pro.precio, pro.cliente, pro.img, pro.tipo, pro.iva)
           
           );
 

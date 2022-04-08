@@ -13,7 +13,8 @@ export class Productos{
     public precio: number,
     public cliente:Cliente,
     public img: string,
-    public tipo:string
+    public tipo:string,
+    public iva:number
  ){
 
  }

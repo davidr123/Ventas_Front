@@ -1,0 +1,86 @@
+<mat-toolbar>
+    <h2 mat-dialog-title>Editar Cliente</h2>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+
+
+    <div class="card-body mt-2" >
+        <form 
+        [formGroup]="FormCliente"
+        (submit)="ActualizarCliente()"
+       
+       
+        >
+            <div class="form-body">
+                <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">INFORMACION DEL CLIENTE</font></font></h3>
+                <hr>
+                <div class="row p-t-20">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
+                            <input type="text" id="firstName" class="form-control" placeholder="Nombre" formControlName="nombre" >
+                        </div>
+                      </div>
+                    <!--/span-->
+                    <div class="col-md-6">
+                        <div class="form-group has-danger">
+                            <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cedula</font></font></label>
+                            <input type="text" id="lastName" class="form-control form-control-danger" placeholder="Cedula" formControlName="cedula" >
+                        </div>
+                    </div>
+                    <!--/span-->
+                </div>
+                <!--/row-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email</font></font></label>
+                            <input type="text" class="form-control" placeholder="Email" formControlName="email"  >
+                        </div>
+                    </div>
+                    <!--/span-->
+                    <div class="col-md-6">
+    
+                        <div class="form-group">
+                            <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Genero</font></font></label>
+                            <!-- <input type="email" class="form-control" placeholder="Genero"  > -->
+                            <input type="text" class="form-control" placeholder="Genero" formControlName="genero"  >
+                        </div>
+                        
+                    </div>
+                    <!--/span-->
+                </div>
+                <!--/row-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group has-success">
+                            <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dirección</font></font></label>
+                            <input type="text" class="form-control" placeholder="Dirección" formControlName="direccion"  >
+    
+                         </div>
+                    </div>
+    
+    
+               
+                    <!--/span-->
+                </div>
+                <!--/row-->
+           
+                <!--/row-->
+    
+                
+             
+            </div>
+            <div class="form-actions mt-4">
+                <button type="submit" class=" btn btn-outline btncolor " mat-dialog-close > 
+                    <i class="fa fa-check"></i><font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit; color:#DD2F6E;">Actualizar</font></font></button>
+            </div>
+        </form>
+    </div>
+         
+          
+    
+
+</mat-dialog-content>

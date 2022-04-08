@@ -52,7 +52,7 @@
                         <mat-toolbar  >
                             <h2>
                                 <button>  <mat-icon class="pointer" (click)="sidebar.toggle()"  >menu</mat-icon></button>
-                                Dashboard
+                                <a [routerLink]="['']"  routerLinkActive="active-link" style="color: black;">Dashboard</a>
                             </h2>
               
                             <div class="row mr-2 ml-auto">
@@ -85,6 +85,7 @@
             <div class="main">
             
          <router-outlet></router-outlet>
+
 
             </div>
 

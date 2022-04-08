@@ -14,7 +14,7 @@ import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthModule } from './authentication/auth.module';
 import { PagesModule } from './pages/pages.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
 AuthModule,
 PagesModule,
-BrowserAnimationsModule
+BrowserAnimationsModule,
+MatProgressSpinnerModule
 
    
     

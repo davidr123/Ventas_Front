@@ -95,7 +95,7 @@ export class ProductosComponent implements OnInit {
     
     this.dataSource= new MatTableDataSource(this.ArrayAdd);
   
-    
+    this.productosServices.ObtenerInformaciondeProductos.emit(this.ArrayAdd);
     
   }
 
@@ -116,6 +116,7 @@ export class ProductosComponent implements OnInit {
 
        this.dataSource= new MatTableDataSource(this.ArrayAdd);
     
+       this.productosServices.ObtenerInformaciondeProductos.emit(this.ArrayAdd);
   }
 
 

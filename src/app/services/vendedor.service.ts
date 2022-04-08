@@ -76,26 +76,36 @@ loginVendedor(data:LoginVendedor){
 }
 
 
-// mostrarVendedor(){
-//   //http://localhost:3002/api/vendedor
+mostrarVendedor(){
+  //http://localhost:3002/api/vendedor
 
-//   const url = `${base_url}/vendedor`;
-//  return this.http.get<VendedorInterface>(url, this.headers)
-//  .pipe(
-//    map(resp=>{
-//      const vendedor = resp.vendedor.map(
-//        vend=> new Vendedor(vend.usuario, '', vend.cedula, vend.email, vend.genero, vend.direccion, vend.img, vend.uid)
-//      );
-//      return{
-//        ok: resp.ok,
-//        vendedor
+  const url = `${base_url}/vendedor`;
+ return this.http.get<VendedorInterface>(url, this.headers)
+ .pipe(
+   map(resp=>{
+     const vendedor = resp.vendedor.map(
+       vend=> new Vendedor(vend.usuario, '', vend.cedula, vend.email, vend.genero, vend.direccion, vend.img, vend.uid)
+     );
+     return{
+       ok: resp.ok,
+       vendedor
 
-//      }
-//    })
-//  )
-// }
+     }
+   })
+ )
+}
 
 
+
+mostrarvendedrobyId(id:string){
+  //http://localhost:3002/api/vendedor/6247c67cb4b08eedfeb6c0ed
+  const url = `${base_url}/vendedor/${id}`;
+  return this.http.get<any>(url, this.headers)
+  .pipe(
+    map((resp:{ok:true, vendedor:Vendedor})=> resp.vendedor)
+  )
+
+}
 
 
 }
