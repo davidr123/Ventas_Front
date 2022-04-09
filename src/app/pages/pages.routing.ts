@@ -17,7 +17,8 @@ const routes: Routes = [
         component: PagesComponent,
         canActivate:[AuthGuard],
         children:[
-    
+        
+
           {path:'pedidos', component:PedidosComponent},
           {path:'historial-cliente', component:HistorialClienteComponent},
           {path:'datos', component:DatosClienteComponent},
