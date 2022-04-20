@@ -25,6 +25,16 @@ mat-icon{
     
 }
 
+@media (max-width: 640px){
+    mat-icon{
+        margin-right: .1rem;
+   
+    }
+
+  
+}
+
+
 .mat-list-item a{
     color:white !important;
     font-size: 0.8rem;

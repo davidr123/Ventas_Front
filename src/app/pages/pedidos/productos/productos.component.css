@@ -13,6 +13,13 @@ main{
     margin-top:1rem;
 }
 
+@media (max-width: 880px ){
+  .cards{
+    grid-template-columns: repeat(1, 2fr) ;
+  }
+}
+
+
 .card {
   display:grid;
   grid-template-columns: repeat(3, 1fr) ;
@@ -28,9 +35,16 @@ main{
     display:flex;
     justify-content:space-between;
     background: #fff;
-    padding:2rem;
+    padding:0.5rem;
     border-radius:2px;
 }
+@media (max-width: 880px ){
+  .card-single{
+    flex-wrap: wrap;
+  }
+
+}
+
 
 .card-single h1 + span{
     color:#8390A2;
@@ -40,11 +54,28 @@ main{
 span{
   margin-left: 10px;
 }
+@media (max-width: 880px ){
+  span{
+    margin-left: 5px;
+    font-size: 7px;
+  }
+
+}
+
 
 
 .images{
     width:80px;
     height:80px;
+
+}
+
+@media (max-width: 880px ){
+  .images{
+    width: 50px;
+    height: 50px;
+    
+  }
 
 }
 
@@ -56,6 +87,25 @@ span{
    
    
 }
+
+@media (max-width: 880px ){
+  .botones{
+  
+    padding-top: 20px;
+
+    padding-right: 20px;
+  }
+
+  button{
+    width: 3rem;
+    font-size: .5rem;
+  }
+
+}
+
+
+
+
 
 .btncolor{
     box-shadow: 0 0 0 3px #DD2F6E;

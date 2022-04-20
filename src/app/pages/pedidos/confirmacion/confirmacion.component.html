@@ -58,7 +58,15 @@
    
     </div>
 
+    <div class="row mt-5">
+      <div class="col-12 text-center">
 
+        <div *ngIf="cargando" class="text-center spin" >
+  
+          <mat-spinner class="spiner text-center" diameter="50" color="warn"></mat-spinner>
+        </div>
+      </div>
+    </div>
 
 
     <mat-card class="example-card ">
@@ -127,13 +135,22 @@
              
               </div>
           
+          
           </div>
           <!-- Columna # 3 -->
+    
 
-          <div>
-            <button (click)="openDialog()"> Finalizar Compra
+          <form id="form" action="">
+
+            
+          <div >
+            <button (click)="Carga()"  class="btn btn-dark" id="finalizar"  > Finalizar Compra
             </button>
+
+
+
           </div>
+          </form>
     
         </div>
     

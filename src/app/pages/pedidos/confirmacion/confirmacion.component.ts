@@ -12,6 +12,27 @@ import { VendedorService } from 'src/app/services/vendedor.service';
 import Swal from 'sweetalert2';
 import { FinalizarcompraComponent } from './finalizarcompra/finalizarcompra.component';
 
+// const form = document.querySelector('#form');
+// const finalizar = document.querySelector('#finalizar');
+// const btncargando= document.querySelector('#btncargando');
+
+
+// form?.addEventListener('submit', (e)=>{
+//   console.log('hoa')
+//   finalizar?.classList.add('d-none');
+//   btncargando?.classList.remove('d-none');
+//   window.setTimeout(()=>{
+// finalizar?.classList.remove('d-none');
+// btncargando?.classList.add('d-none');
+//   }, 2000)
+// })
+
+// finalizar?.addEventListener('click', (e)=>{
+//   e.preventDefault();
+//   console.log('hola')
+// })
+
+
 @Component({
   selector: 'app-confirmacion',
   templateUrl: './confirmacion.component.html',
@@ -27,7 +48,7 @@ export class ConfirmacionComponent implements OnInit {
   public ArrayProductosBorrado: Productos[]=[];
    public clientecompras!:Cliente;
 public vendedor!:Vendedor;
-
+public cargando: boolean = true;
 public subtotalsinIva!:number;
 public cantidad!:number;
 public subtotal!:number;
@@ -53,7 +74,7 @@ public Ivas:any=0;
   }
 
   ngOnInit(): void {
-
+    this.cargando= false;
 this.clienteService.cliente
 .subscribe(client=>{
   console.log(client);
@@ -62,6 +83,7 @@ this.clienteService.cliente
 
     this.productoService.ObtenerInformaciondeProductos
     .subscribe(resp=>{
+      
       console.log(resp)
       this.ArrayAdd= resp;
 
@@ -182,5 +204,16 @@ this.totalidadesIva= this.totalidadesIva + this.SumTotalIva;
     }, 300);
     this.progressSpinerService.detach()
   }
+
+  Carga(){
+    this.cargando=true;
+    window.setTimeout(()=>{
+
+      this.cargando=false;
+Swal.fire('Gracias', 'Fue un placer atenderle', 'success')
+    },2000)
+  }
+
+
 
 }
