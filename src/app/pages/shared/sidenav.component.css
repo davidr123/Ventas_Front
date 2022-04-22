@@ -10,9 +10,21 @@ mat-divider{
 
 
 .logo{
+    
     text-align: center;
     padding: 2.6rem 1rem;
  
+}
+
+@media (max-width: 640px){
+    .logo,h2{
+        flex-direction: column;
+       flex-wrap: wrap;
+       font-size: 0;
+       
+       
+        
+    }
 }
 
 img{

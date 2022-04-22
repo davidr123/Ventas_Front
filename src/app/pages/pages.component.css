@@ -38,7 +38,8 @@ mat-sidenav{
 
 @media (max-width: 640px){
     mat-sidenav{
-        width: 7rem;
+        width: 2.6rem;
+       
         
     }
 }
